@@ -1,1 +1,1 @@
-# BUILDING WEATHER API
+# Building Weather API
