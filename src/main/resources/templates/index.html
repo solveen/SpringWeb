@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -13,19 +13,41 @@
             <table class="table table-dark">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Description</th>
                     <th scope="col">Temperature</th>
                     <th scope="col">Feels_like</th>
                 </tr>
                 </thead>
                 <tbody>
+                    <tr th:each="weathers: ${weather}">
+                    <td th:text="${weathers.description}"></td>
+                    <td th:text="${weathers.temp}"></td>
+                    <td th:text="${weathers.feels_like}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-dark">
+                <thead>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="col">Description</th>
+                    <th scope="col">Temperature</th>
+                    <th scope="col">Feels_like</th>
                 </tr>
+                </thead>
+                <tbody>
+                <tbody>
+                <tr th:each="weather: ${weathers}">
+                    <td th:text="${weather.description}"></td>
+                    <td th:text="${weather.temp}"></td>
+                    <td th:text="${weather.feels_like}"></td>
+                </tr>
+                </tbody>
 
                 </tbody>
             </table>
